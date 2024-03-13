@@ -19,10 +19,16 @@ function App() {
     }
   };
 
-  const handleMarkAsRead = (time) => {
-    console.log("time", typeof time);
+  const handleMarkAsRead = (time, id) => {
+    // console.log("time", typeof time);
+    console.log(id);
 
     seTreadingTime(readingTime + time);
+
+    const remainingBookmarks = bookmarks.filter(
+      (bookmark) => bookmark.id !== id
+    );
+    setBookmarks(remainingBookmarks);
   };
 
   return (
